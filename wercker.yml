@@ -1,6 +1,4 @@
-box: wercker/default
+box: wercker/golang@1.3.3
 build:
   steps:
-    - arjen/hugo-build:
-        version: 0.13
-        flags: --buildDrafts=true
+    - arjen/hugo-build@1.3.0
