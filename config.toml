@@ -1,0 +1,5 @@
+baseurl = "http://vps.cloudapp.net/"
+title = "Puke Ahu Anthology"
+languageCode = "en-NZ"
+[taxonomies]
+  category = "categories"

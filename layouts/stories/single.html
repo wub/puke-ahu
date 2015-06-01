@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="//brick.global.ssl.fastly.net/Open+Sans:400,600,700,900,400i,600i,700i,900i">
+    <base href="{{ .Site.BaseUrl }}">
+    <title>{{ .Title }} &ndash; {{ .Site.Title}}</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
+  </head>
+  <body class="blue">
+    <div class="wrapper wrapper--full-story">
+      <article class="full-story blue">
+        <a href="index.html" class="full-story__category" itemprop="breadcrumb">
+          {{ range .Params.categories }}
+            {{ . }}
+          {{ end}}
+        </a>
+        <!--&#x24CD; (closing x)-->
+        <div class="xxx">
+          <h1 class="full-story__title blue">{{ .Title }}</h1>
+          <h2 class="full-story__author">{{ .Params.author }}</h2>
+
+          <div class="full-story__content blue">
+            {{ if isset .Params "lead" }}
+              <p class="full-story__lead">{{ .Params.lead }}</p>
+            {{ end }}
+
+            {{ .Content }}
+
+            <footer class="story__footer">
+              Ward to JCB, undated (c. 1961)<br>
+              Ward interview. LC, MSC 430. Oral History Centre, ATL<br>
+              Allan Thomas, ‘The Savage Clubs: A Spirit of “Bohemian” Comradeship’, Turnbull Library Record,<br>
+              vol.31 (1998), pp.43-62<br>
+              Ward to JCB, undated (c. 1961)<br>
+              Ibid.<br>
+              Records of Mount Cook School at this time are held in both the ATL and the J.C. Beaglehole Room in<br>
+              the VUW Library. See also the short history by Don Brown, Mount Cook School 1875-1975 (Wellington: Mount Cook School Centennial Committee, 1975)<br>
+              Supplement to the New Zealand Gazette, 1914, vol.1, pp.
+            </footer>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>

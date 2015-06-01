@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-NZ">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="//brick.global.ssl.fastly.net/Open+Sans:400,600,700,900,400i,600i,700i,900i">
+    <base href="{{ .Site.BaseUrl }}">
+    <title>{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage">
+    <div class="wrapper">
+      <h1 class="header__title">Puke Ahu Anthology</h1>
+      <nav class="header__nav">
+        <a class="header__nav__item" href="#">Bibliography</a>
+        <a class="header__nav__item" href="#">Contact</a>
+      </nav>
+      <p class="header__foreword">
+        An anthology of writing about Puke Ahu/Mount Cook, which includes
+        essays, poems, and extracts from novels and plays, as well as some
+        new writing. There is a focus on the many layers of stories and
+        histories connected to Puke Ahu and its particular
+        geographical features.
+      </p>
+
+      <section class="article-list">
+        {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          <!-- todo: use {{$name}} as "blue" colour etc -->
+          <article class="article {{ $name }}">
+            <h1 class="article__title article__title--active">
+              <!-- some hacks to bypass Hugo's dreadful taxonomies, I'm so sorry -->
+              {{ $name := replace $name "-" " " | title }}
+              {{ $nameIn := replace $name "In" "in" }}
+              {{ $nameAnd := replace $nameIn "And" "and" }}
+              {{ $nameAnd }}
+            </h1>
+            <div class="article__body">
+              {{ range $taxonomy.Pages }}
+                <div class="story" itemscope itemtype="http://schema.org/CreativeWork">
+                  <div class="story__meta">
+                    <a href="{{ .Permalink}}" class="story__title" itemprop="name">
+                      {{ .LinkTitle }}
+                      {{ if isset .Params "subtitle" }}
+                        <br>
+                        <small>{{ .Params.subtitle }}</small>
+                      {{ end }}
+                    </a>
+                    <div class="story__author" itemprop="author">
+                      {{ .Params.author }}
+                    </div>
+                  </div>
+                  <p class="story__summary">
+                    <span itemprop="about">
+                      {{ .Description }}
+                    </span>
+
+                    <a class="story__read-more" href="{{ .Permalink }}">
+                      Read more...
+                    </a>
+                  </p>
+                </div>
+              {{ end }}
+          </article>
+        {{ end }}
+
+        <!--<article class="article blue">
+          <h1 class="article__title article__title--active">Foreword</h1>
+          <div class="article__body">
+
+            <div class="story">
+              <div class="story__meta">
+                <a href="story.html" class="story__title">
+                  Moreporks
+                  <br>
+                  <small>(Bird Skins Room # 2), Taranaki St, Wellington, 3 October 1995</small>
+                </a>
+                <div class="story__author">Laurence Aberhart</div>
+              </div>
+              <p class="story__summary">
+                Laurence Aberhart has been a leading New Zealand photographer since the 1970's and has a significant international reputation. Moreporks (Bird Skins Room # 2), Taranaki St, is from Aberhart, published by Victoria University Press in 2007. Aberhart’s photographs meditate on our culture and the passing of time, and observes those things that remain and endure.
+
+                <a class="story__read-more" href="#">Read more...</a>
+              </p>
+            </div>
+
+            <div class="story">
+              <div class="story__meta">
+                <a href="#" class="story__title">
+                  Ka aro au
+                  <br>
+                  <small>(Cuba Street song)</small>
+                </a>
+                <div class="story__author">Hinemoana Baker</div>
+              </div>
+              <p class="story__summary">
+                Laurence Aberhart has been a leading New Zealand photographer since the 1970's and has a significant international reputation. Moreporks (Bird Skins Room # 2), Taranaki St, is from Aberhart, published by Victoria University Press in 2007. Aberhart’s photographs meditate on our culture and the passing of time, and observes those things that remain and endure.
+
+                <a class="story__read-more" href="#">Read more...</a>
+              </p>
+            </div>
+
+            <div class="story">
+              <div class="story__meta">
+                <a href="#" class="story__title">Childhood and Youth</a>
+                <div class="story__author">Tim Beaglehole</div>
+              </div>
+              <p class="story__summary">
+                Tim Beaglehole is an academic and a former chancellor of Victoria University. His 2006 biography of his father, J. C. Beaglehole, examines the life of the noted Wellington historian. Growing up in Hopper Street and attending Mount Cook School, the young John Cawte Beaglehole was later to become a renowned authority on Captain James Cook. The excerpt ‘Childhood and Youth’ describes John and his family growing up in Mount Cook and social and political events that framed their lives.
+
+                <a class="story__read-more" href="#">Read more...</a>
+              </p>
+            </div>
+
+            <div class="story">
+              <div class="story__meta">
+                <a href="#" class="story__title">Two Poems</a>
+                <div class="story__author">Vivienne Plumb</div>
+              </div>
+              <p class="story__summary">
+                Poet, author and playwright, Vivienne Plumb, was a Mount Cook resident for many years. The poems ‘To the Woman who Bought my House’ and ‘And the Next Field Held Moose’ describe the complexity of selling a place where family history resides and then the experience of having sold one’s family home and being on a different journey.
+
+                <a class="story__read-more">Read more...</a>
+              </p>
+            </div>
+
+            <div class="story">
+              <div class="story__meta">
+                <a href="#" class="story__title">Little Houses</a>
+                <div class="story__author">Robyn Hyde</div>
+              </div>
+              <p class="story__summary">
+                Robin Hyde (1906-1930) was born as Iris Wilkinson in Cape Town and moved
+
+                <a class="story__read-more">Read more...</a>
+              </p>
+            </div>
+        </article>
+
+        <article class="article">
+          <h1 class="article__title purple">Living in Puke Ahu</h1>
+          <div class="article__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </article>
+
+        <article class="article">
+          <h1 class="article__title orange">Memorialising Histories</h1>
+          <div class="article__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </article>
+
+        <article class="article">
+          <h1 class="article__title red">Arrows in the Bricks</h1>
+          <div class="article__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </article>
+
+        <article class="article">
+          <h1 class="article__title green">Migrations and Movements</h1>
+          <div class="article__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </article>
+
+        <article class="article">
+          <h1 class="article__title pink">Visual Imprints</h1>
+          <div class="article__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </article>
+
+        <article class="article">
+          <h1 class="article__title">Contact</h1>
+          <div class="article__body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+        </article>
+      </section>-->
+
+      <footer class="footer">
+        <div class="footer__copyright">Puke Ahu Anthology &copy; 2015</div>
+        <nav class="footer__nav">
+          <a class="footer__nav__item" href="/bibliography/">Bibliography</a>
+          <a class="footer__nav__item" href="/contact/">Contact</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script>
+      // Toggles an article when you click on the title.
+      [].forEach.call(document.querySelectorAll(".article__title"), function (e) {
+        e.addEventListener("click", function(event) {
+          event.target.classList.toggle("article__title--active");
+        }, false);
+      });
+    </script>
+  </body>
+</html>
