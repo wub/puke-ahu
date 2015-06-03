@@ -2,7 +2,7 @@
 categories: ["Living in Puke Ahu"]
 
 title: "Childhood and Youth"
-subtitle: "Subtitle goes here"
+subtitle: "Subtitle can go here"
 author: "Tim Beaglehole"
 
 description: "Laurence Aberhart has been a leading New Zealand photographer since the 1970's and has a significant international reputation. Moreporks (Bird Skins Room # 2), Taranaki St, is from Aberhart, published by Victoria University Press in 2007. Aberhart’s photographs meditate on our culture and the passing of time, and observes those things that remain and endure."
@@ -12,16 +12,15 @@ lead: "John was often the bearer of notes from his mother, and was remembered by
 
 Finally she ventured, "What time does your mother want you home, dear?" She was kneeling at the oven putting in a tray of rock cakes. "What time do the rocks come out?" John asked. It became a family saying. The Beaglehole boys were all said to have great appetites; none of them shared their mother's vegetarian principles, which seem to have left them feeling hungry. Large appetites may have run in the male members of the family. A story tells of someone looking out of the window at Hopper Street during afternoon tea and suddenly crying out, 'Hide the cake under the sofa, here comes Joe!'
 
+{{< image src="http://placeimg.com/123/arch" >}}
+
 The extended family moved around to one another's houses for parties with music or charades, occasions of great jollity and youthful high spirits. Ern showed a lighter side, teasing the girls. He clearly adored them and would have liked a daughter. A young relative met him one morning, very dapper, on his way to work. 'Whither away fair maid, whither away', he greeted her. He 'had some very flowery language'. In the charades Uncle Will Jackson was a star, and Alan Paterson made his mark early, portraying a reformed sinner who had taken the pledge – a live issue, as most of the older generation were strong temperance supporters. Alan also showed an early talent for drawing, a foretaste of his career as a cartoonist on the Dominion. His gifts for drawing, acting and writing were all to flourish during his later membership of the Wellington Savage Club. John went to dancing classes conducted by Miss Moore, 'incredibly frizzed and rouged'. A cousin later recalled dancing with him 'when Miss Moore called out: "Jack and Amy, relax your muscles", and you muttered into my ear, "Good God, how are we supposed to do that?" and I said, "You ass, you know how to relax you muscles, don't you?" And your memorable reply was: "Gosh, I thought the woman said bustles."' In the summer there were picnics at Scorching Bay, reached after a good walk from the end of the newly opened Seatoun tramline.
 
-<!-- todo: image partial (source, alt, meta, ref) -->
-<div class="image">
-  <img src="https://placeimg.com/768/768/arch" alt="King Street, Mt Cook, Wellington">
-  <div class="image__meta">
-    <div class="image__alt blue">King Street, Mt Cook, Wellington.</div>
-    <div class="image__ref">Ref: EP/1957/3388-F.<br>Alexander Turnbull Library, Wellington, New Zealand.</div>
-  </div>
-</div>
+{{< image
+  src="http://placeimg.com/768/arch"
+  alt="Something Street, Mt Cook, Wellington"
+  ref="Ref: EP/1957/3388-F. Alexander Turnbull Library, Wellington, New Zealand."
+>}}
 
 The boys went to Mount Cook School. John began in 1906, when he turned five; Geoffrey had already been there for three years and Keith started two years later. The school, opened in 1875 as a development of the Buckle Street Girls’ School, was run by a Mrs Wilkinson and her daughter. The Mount Cook district was something of a social mix. The homes of the better-off were on Willis Street, where Dr Bennett lived and had her rooms, and climbed the hills to the south, where the Kirkcaldie mansion at the top of Thompson Street looked down on many fine houses. On the Te Aro flat, which included Hopper Street, the houses were the much more modest dwellings of manual workers and the unemployed. The Mount Cook School grew rapidly at first, reaching a roll of 598 in 1897, before declining to 384 in 1907 and 330 in 1913. This decline followed the suburban development that was closely linked to the construction of the new electric tramway system. In 1904 the trams began running down Hopper Street, crashing and swaying within a few metres of the Beaglehole house. Surely one day, the boys hoped and feared, one would fail to take the corner into Webb Street and would hurtle into Burbidge’s greengrocery, spraying fruit and vegetables everywhere.
 

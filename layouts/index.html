@@ -29,7 +29,7 @@
         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
           <!-- todo: use {{$name}} as "blue" colour etc -->
           <article class="article {{ $name }}">
-            <h1 class="article__title article__title--active">
+            <h1 class="article__title">
               <!-- some hacks to bypass Hugo's dreadful taxonomies, I'm so sorry -->
               {{ $name := replace $name "-" " " | title }}
               {{ $nameIn := replace $name "In" "in" }}
@@ -53,7 +53,7 @@
                   </div>
                   <p class="story__summary">
                     <span itemprop="about">
-                      {{ .Description }}
+                      {{ .Description | safeHtml }}
                     </span>
 
                     <a class="story__read-more" href="{{ .Permalink }}">

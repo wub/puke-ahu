@@ -1,0 +1,7 @@
+<div class="image">
+  <img src="{{ .Get "src" }}">
+  <div class="image__meta">
+    {{ with .Get "alt" }}<div class="image__alt">{{ . }}</div>{{ end }}
+    {{ with .Get "ref" }}<div class="image__ref">{{ . }}</div>{{ end }}
+  </div>
+</div>

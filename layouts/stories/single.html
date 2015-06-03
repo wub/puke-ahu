@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <link rel="stylesheet" href="//brick.global.ssl.fastly.net/Open+Sans:400,600,700,900,400i,600i,700i,900i">
     <base href="{{ .Site.BaseUrl }}">
-    <title>{{ .Title }} &ndash; {{ .Site.Title}}</title>
+    <title>{{ .Title }} &mdash; {{ .Site.Title}}</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="canonical" href="{{ .Permalink }}">
     <link href="{{ .RSSlink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}">
@@ -18,7 +18,9 @@
             {{ . }}
           {{ end}}
         </a>
-        <!--&#x24CD; (closing x)-->
+        <a href="/" style="color:#666;text-decoration:none;position:absolute;top:0;right:0;font-size:48px;font-family:sans-serif">
+          &#x24CD;
+        </a>
         <div class="xxx">
           <h1 class="full-story__title blue">{{ .Title }}</h1>
           <h2 class="full-story__author">{{ .Params.author }}</h2>
